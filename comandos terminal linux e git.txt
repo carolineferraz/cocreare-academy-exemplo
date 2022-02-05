@@ -1,0 +1,119 @@
+Comandos terminal Linux
+
+• pwd -> mostra a pasta que vc está
+• sudo apt-get install git -> instala o git (exemplo)
+
+
+--------------------------------------------------------
+Notas sobre Git:
+
+O Git vem com uma ferramenta chamada git config que permite ver e atribuir variáveis de configuração que controlam todos os aspectos de como o Git funciona. Estas variáveis podem ser armazenadas em três lugares diferentes:
+
+    • /etc/config: Configurações pertinentes a todos os usuários do sistema.
+    • ~/.gitconfig: Configuração específica de cada usuário.
+    • .git/config: Configuração de cada diretório git.
+
+--------------------------------------------------------
+Comandos Git:
+
+• git config –global user.name “fulano”
+	(configura nome de usuário do git)
+
+• git config –global user.email fulano@desenvolvedortop.com
+	(configura e-mail de usuário do git)
+
+• config –list
+	(lista todas as configurações do Git)
+
+PS: A diretiva –global é responsável por registrar as informações no ~/.gitconfig. Se você desejar que essas informações sejam diferentes para projetos específicos, é necessário apenas digitar o mesmo comando sem a diretiva –global no diretório em que foi criado um projeto .Git.
+
+• git clone url
+	(serve para obter-se a cópia de um repositório git existente)
+
+• git init 
+	(cria uma pasta pra os diretórios git)
+
+• git status 
+	(diz qual o status dos arquivos da pasta em que vc está)
+
+• git add nome_do_arquivo.extensão
+	(comitta o arquivo especificado, deixando-o pronto para ser enviado para o repositório)
+
+• git add .
+	(comitta todos os arquivos da pasta, deixando-os prontos para serem enviados para o repositório) 
+
+• git commit -m "mensagem"
+	(adiciona uma mensagem no commit)
+
+• git push origin master
+	(envia o commit pra o repositório remoto do github)
+
+• clear 
+	(deixa a visualização no terminal limpa)
+
+• git diff 
+	(mostra se/quais arquivos, que já estavam comittados, tiveram alguma alteração após o commit e qual foi a alteração)
+
+• git log
+	(serve para ver o histórico de commits)
+
+• cd ..
+	(volta uma pasta)
+
+• cd nome_da_pasta/
+	(entra na pasta com o caminho especificado)
+
+• mkdir nome_da_pasta
+	(cria uma pasta com o nome especificado)
+
+• touch nome_do_arquivo.extensão
+	(cria um arquivo com o nome e extensão especificados)
+
+• touch .gitignore
+	(cria um arquivo no formato .txt em que você pode listar os arquivos que você que sejam ignorados do commit)
+
+• git tag -a v1.1 
+	(cria uma tag com o nome v1.1 | tags tem a função de marcar a versão de um conjunto de commits)
+
+• git tag -a v1.1 -m "mensagem"
+	(cria uma tag com o nome v1.1 e uma mensagem | tags tem a função de marcar a versão de um conjunto de commits)
+
+• git push origin master --tags
+	(sobe as tags criadas para o github)
+
+• git push
+	(sobe os arquivos commitados para o repositório já criado no GitHub)
+
+• git pull origin master 
+	("puxa" os arquivos do repositório remoto no github para o seu repositório local na máquina)
+
+• git remote add origin https://meu-endereco.com/meu-projeto.git
+	(liga um repositório local a um repositório remoto já existente e especificado no parâmetro do código)
+
+• git remote -v
+	(mostra o endereço do repositório remoto para o qual o commit será enviado)
+
+• git remote rm origin
+	(desfaz a conexão criada com o repositório remoto)
+
+• git remote rename nome-atual novo-nome
+	(troca o nome de um repositório remoto)
+
+• git remote set-url origin http://meu-novo-endereco/meu-projeto.git
+	(define a url do repositório para onde os commits passarão a ser enviados)
+
+• git push -u origin minha-branch
+	(envia os commits para uma branch remota ainda não existente no repositório. após a branch ser criada pode-se enviar os arquivos apenas com um git push)
+
+• git branch
+	(lista as branches presentes no repositório do seu computador)
+
+• git branch -a
+	(lista as branches presentes no repositório do computador e no repositório remoto)
+
+• git branch nome-da-branch
+	(cria uma branch com o nome especificado)
+
+• git push --set-upstream origin nome-da-branch 
+
+	
