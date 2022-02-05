@@ -87,5 +87,22 @@ PS: A diretiva –global é responsável por registrar as informações no ~/.gi
 • git pull origin master 
 	("puxa" os arquivos do repositório remoto no github para o seu repositório local na máquina)
 
+• git branch
+	(
+
+• git remote add origin https://meu-endereco.com/meu-projeto.git
+	(liga um repositório local a um repositório remoto já existente e especificado no parâmetro do código)
+
+• git remote -v
+	(mostra o endereço do repositório remoto para o qual o commit será enviado)
+
+• git remote rm origin
+	(desfaz a conexão criada com o repositório remoto)
+
+• git remote rename nome-atual novo-nome
+	(troca o nome de um repositório remoto)
+
+• 
+
 
 	
