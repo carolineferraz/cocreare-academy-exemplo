@@ -111,6 +111,9 @@ PS: A diretiva –global é responsável por registrar as informações no ~/.gi
 • git branch -a
 	(lista as branches presentes no repositório do computador e no repositório remoto)
 
+• git branch nome-da-branch
+	(cria uma branch com o nome especificado)
 
+• git push --set-upstream origin nome-da-branch 
 
 	
