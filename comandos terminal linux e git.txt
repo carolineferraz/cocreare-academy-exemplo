@@ -1,11 +1,11 @@
-Comandos terminal Linux
+COMANDOS TERMINAL LINUX
 
 • pwd -> mostra a pasta que vc está
 • sudo apt-get install git -> instala o git (exemplo)
 
 
 --------------------------------------------------------
-Notas sobre Git:
+NOTAS SOBRE GIT:
 
 O Git vem com uma ferramenta chamada git config que permite ver e atribuir variáveis de configuração que controlam todos os aspectos de como o Git funciona. Estas variáveis podem ser armazenadas em três lugares diferentes:
 
@@ -14,15 +14,15 @@ O Git vem com uma ferramenta chamada git config que permite ver e atribuir vari�
     • .git/config: Configuração de cada diretório git.
 
 --------------------------------------------------------
-Comandos Git:
+COMANDOS GIT:
 
-• git config –global user.name “fulano”
+• git config -–global user.name “fulano”
 	(configura nome de usuário do git)
 
-• git config –global user.email fulano@desenvolvedortop.com
+• git config –-global user.email fulano@desenvolvedortop.com
 	(configura e-mail de usuário do git)
 
-• config –list
+• git config -–list
 	(lista todas as configurações do Git)
 
 PS: A diretiva –global é responsável por registrar as informações no ~/.gitconfig. Se você desejar que essas informações sejam diferentes para projetos específicos, é necessário apenas digitar o mesmo comando sem a diretiva –global no diretório em que foi criado um projeto .Git.
@@ -114,6 +114,82 @@ PS: A diretiva –global é responsável por registrar as informações no ~/.gi
 • git branch nome-da-branch
 	(cria uma branch com o nome especificado)
 
+• git checkout nome-da-branch
+	(você passa a trabalhar dentro da branch nome-da-branch)
+
+• git -b nome-da-branch
+	(uma espécie de atalho, que cria uma nova branch e já te tranfere para essa branch)
+
+• git merge nome-da-branch
+	(une a branch que você está com a branch nome-da-branch. depois desse comando aparecerá uma mensagem pedindo pra vc escrever uma mensagem explicando o porquê da união dessas branches. você pode escrever essa mensagem ou simplesmente digitar ":x")
+
+• git rebase nome-da-branch
+	(une duas branches sem perder os logs. imagine a seguinte situação: você quer desenvolver uma parte específica do código de um arquivo, e, para organizar o fluxo de trabalho em equipe, você cria uma branch partindo dessa branch mãe chamada "master" e essa branch que você criou se chama "section". E aí depois de você já ter começado a desenvolver a sua parte do código e ter feito vários commits alguém faz uma correção no código da branch master. Se você der um "git merge master", os logs, ou seja, as informações dos commits já realizados por você vão ser perdidas, e você quer pegar essa correção feita na branch master e trazer pra sua branch também. Para essa situação, você pode fazer um "git checkout master", pra ir até a master e depois fazer um "git rebase section". Dessa forma você vai levar as alterações da branch master até a branch section sem dar um merge, ou seja, sem perder o seus logs e continuar o seu projeto)
+
 • git push --set-upstream origin nome-da-branch 
+
+• git log 
+	(mostra informações de um commit, como o seu código hash, por exemplo)
+
+• git log --oneline 
+	(mostra as informações do commit de forma resumida, com só o início do hash, por exemplo)
+
+• git log -p
+	(mostra todas as alterações que foram feitas no commit)
+
+• git revert 00000000000000
+	(volta para a versão/commit do código especificado)
+
+• git checkout -- nome_do_arquivo.extensão
+	(te tranfere pra o estado do último commit que você nesse arquivo)
+
+• git reset HEAD nome-do-arquivo.extensão
+	(desfaz o último git add que você deu)
+
+• git revert hash-do-commit
+	(depois de você ter feito um ou mais commits e perceber que eles não deveriam ter sido feitos e que você precisa voltar para o estado de um commit anterior você pode usar esse comando. Pra descobrir qual o hash do commit que você quer ir, você pode dar um git log. É possível ainda fazer um commit só para esse ato de voltar para um outro commit e pra isso aparecerá uma opção na tela)
+
+• git stash
+	(é uma espécie de commit temporário. serve pra quando você vai precisar parar de trabalhar em código, sabe que ainda precisa revisá-lo antes de fazer um commit, mas precisa deixá-lo salvo para fazer essa conferência depois)
+
+• git stash list
+	(mostra a lista de stash's criados, com número de cada stash)
+
+• git stash apply n
+	(aplica as modificações da stash de número n)
+
+• git stash drop
+
+• git stash pop
+
+• git diff hash1..hash5
+	(no exemplo, mostra a diferença entre o estado do commit de hash1 e o commit de hash5)
+
+• git diff
+	(se você tiver feito alterações que ainda não foram commitadas, esse comando irá mostrar quais são essas alterações que ainda não foram commitadas)
+
+• 
+
+-------------------------------------
+
+DICAS:
+
+• Gitignore:
+
+- Para nunca incluir arquivos específicos nos commits, é interessante criar um arquivo chamado ".gitignore", que nada mais será do que um arquivo de texto no qual você pode escrever os nomes dos arquivos que você quer que fiquem sendo ignorados nos commits;
+- Para usar o .gitignore, depois de criar o arquivo para escrever os nomes dos arquivos a serem ignorados dentro dele, cada um em uma linha, você deve dar um git add .gitignore e, então, fazer um commit. Só aí o .gitignore começa a funcionar de fato.
+
+
+
+
+-------------------------------------
+
+LINKS:
+
+• Geralzão de Git:
+	https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Gravando-Altera%C3%A7%C3%B5es-em-Seu-Reposit%C3%B3rio
+
+• Vários tipos de git log:
+	https://devhints.io/git-logs
 
 	
